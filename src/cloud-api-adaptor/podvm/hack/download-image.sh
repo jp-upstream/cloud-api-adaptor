@@ -30,6 +30,7 @@ done
 container_name="podvm-exporter-$(date +%Y%m%d%H%M%s)"
 
 # Default to use docker, but check if podman is available
+echo $(which docker)
 if docker --version >/dev/null 2>&1; then
     container_binary=docker
 elif podman --version >/dev/null 2>&1; then
