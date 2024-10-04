@@ -48,7 +48,9 @@ fi
 
 # Create a non-running container to extract image
 echo ">Downloading image and creating container"
-$container_binary create --platform="$platform" --name "$container_name" "$image" /bin/sh >/dev/null 2>&1;
+$container_binary create --platform="$platform" --name "$container_name" "$image" 
+echo $(docker images)
+# /bin/sh >/dev/null 2>&1;
 # Destory container after use
 rm-container(){
     $container_binary rm -f "$container_name" >/dev/null 2>&1;
